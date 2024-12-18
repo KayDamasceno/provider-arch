@@ -24,3 +24,7 @@ npm-debug.log*
 
 # Pact
 pacts
+
+# Prisma
+prisma/dev.db
+primsa/dev.db-journal
