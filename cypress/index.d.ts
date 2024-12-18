@@ -5,6 +5,7 @@ declare global {
     interface Chainable<Subject> {
       /** https://www.npmjs.com/package/@cypress/skip-test
        * `cy.skipOn('localhost')` */
+      maybeGetToken(sessionName:string) : Chainable<string> //If token exists, reuse it, if not exists, get a new one
       skipOn(
         nameOrFlag: string | boolean | (() => boolean),
         cb?: () => void
