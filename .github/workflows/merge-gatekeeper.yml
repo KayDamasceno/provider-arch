@@ -12,6 +12,19 @@ jobs:
       checks: read
       statuses: read
     steps:
+      # Step to debug environment variables
+      - name: Debug Environment
+        run: |
+          echo "GitHub Token: ${{ secrets.GITHUB_TOKEN }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Event Name: ${{ github.event_name }}"
+          echo "Action: ${{ github.action }}"
+
+      # Step to check out the repository (optional but useful)
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Original step to run Merge Gatekeeper
       - name: Run Merge Gatekeeper
         uses: upsidr/merge-gatekeeper@v1
         with:
