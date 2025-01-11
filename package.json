@@ -11,7 +11,7 @@
     "mock:server": "npx mockoon-cli start --data ./mockoon/mock.json --port 3001",
     "db:migrate": "npx prisma migrate reset --force --skip-seed generate",
     "db:sync": "npx prisma db push --force-reset && npx prisma generate",
-    "start": "wsl ./scripts/env-setup.sh && npm run db:sync && npm run reset:db && nodemon",
+    "start": ". ./scripts/env-setup.sh && npm run db:sync && npm run reset:db && nodemon",
     "reset:db": "tsx  ./scripts/global-setup.ts",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|ts|json)\"",
     "fix:format": "npm run prettier -- --write",
