@@ -79,21 +79,15 @@ export const GetMovieResponseUnionSchema = z
           description: 'Movie details or null if not found',
           example: { id: 1, name: 'Inception', year: 2010, rating: 7.5 }
         }),
-      z
-        .array(z.object(movieObject))
-        .openapi({
-          description: 'List of movies or empty array if no movies exist',
-          example: []
-        })
-    ]),
-    error: z
-      .string()
-      .nullable()
-      .optional()
-      .openapi({
-        description: 'Error message, if an error occurred, otherwise null',
-        example: null
+      z.array(z.object(movieObject)).openapi({
+        description: 'List of movies or empty array if no movies exist',
+        example: []
       })
+    ]),
+    error: z.string().nullable().optional().openapi({
+      description: 'Error message, if an error occurred, otherwise null',
+      example: null
+    })
   })
   .openapi('GetMovieResponse')
 
@@ -112,12 +106,10 @@ export const DeleteMovieResponseSchema = z.object({
     .number()
     .int()
     .openapi({ example: 200, description: 'Response status code' }),
-  message: z
-    .string()
-    .openapi({
-      example: 'Movie {id} has been deleted',
-      description: 'Sucess message for the deleted movie'
-    })
+  message: z.string().openapi({
+    example: 'Movie {id} has been deleted',
+    description: 'Sucess message for the deleted movie'
+  })
 })
 
 export const UpdateMovieSchema = z
