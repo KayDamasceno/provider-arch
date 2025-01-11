@@ -1,7 +1,6 @@
-import { truncateTables } from "./truncate-tables";
+import { truncateTables } from './truncate-tables'
 
-export default async function globalSetup():Promise<void> {
-    console.log("Running global setup once befere everything...")
-    await truncateTables()
-
+export default async function globalSetup(): Promise<void> {
+  console.log('Running global setup once befere everything...')
+  await truncateTables()
 }

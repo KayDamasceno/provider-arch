@@ -10,7 +10,7 @@ describe('CRUD movie', () => {
       .its('body.message')
       .should('eq', 'Server is running')
 
-    cy.maybeGetToken('token-session').then((t) : void => {
+    cy.maybeGetToken('token-session').then((t): void => {
       token = t
     })
   })
