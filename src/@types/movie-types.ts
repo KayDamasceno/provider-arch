@@ -1,14 +1,14 @@
-import type {z} from 'zod'
+import type { z } from 'zod'
 import type {
-    CreateMovieSchema,
-    CreateMovieResponseSchema,
-    ConflictMovieResponseSchema,
-    GetMovieResponseUnionSchema,
-    MovieNotFoundResponseSchema,
-    DeleteMovieResponseSchema,
-    UpdateMovieSchema,
-    UpdateMovieResponseSchema
-} from "./schema"
+  CreateMovieSchema,
+  CreateMovieResponseSchema,
+  ConflictMovieResponseSchema,
+  GetMovieResponseUnionSchema,
+  MovieNotFoundResponseSchema,
+  DeleteMovieResponseSchema,
+  UpdateMovieSchema,
+  UpdateMovieResponseSchema
+} from './schema'
 
 export type CreateMovieRequest = z.infer<typeof CreateMovieSchema>
 
